@@ -1,0 +1,14 @@
+server:
+  port: 8181
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+  datasource:
+    username: university-user
+    password: jahongir9899
+    url: jdbc:postgresql://localhost:5432/student-university
