@@ -3,6 +3,7 @@ package uz.roadmap.entity.model;
 import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Getter
 @Setter
@@ -11,7 +12,7 @@ import javax.persistence.*;
 @ToString
 @Entity
 @Table(name = "students")
-public class Students {
+public class Students implements Serializable {
     //
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

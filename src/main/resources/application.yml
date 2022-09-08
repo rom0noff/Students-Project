@@ -12,3 +12,4 @@ spring:
     username: university-user
     password: jahongir9899
     url: jdbc:postgresql://localhost:5432/student-university
+

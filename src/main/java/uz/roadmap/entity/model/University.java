@@ -3,6 +3,7 @@ package uz.roadmap.entity.model;
 import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
@@ -14,7 +15,7 @@ import java.util.Set;
 @ToString
 @Entity
 @Table(name = "university")
-public class University {
+public class University implements Serializable {
     //
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +24,7 @@ public class University {
     @Column(name = "name")
     private String name;
 
-    @OneToMany(mappedBy = "university", fetch =FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "university", fetch =FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Field> fields = new LinkedList<>();
 
 }

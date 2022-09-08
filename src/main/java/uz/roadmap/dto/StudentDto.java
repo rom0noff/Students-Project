@@ -12,7 +12,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @ToString
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class StudentDto implements Serializable {
+public class StudentDto {
     //
     private Long id;
     @JsonProperty("first_name")

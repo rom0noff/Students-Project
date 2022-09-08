@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import uz.roadmap.document.ConvertorFile;
 import uz.roadmap.entity.model.Students;
 import uz.roadmap.service.StudentService;
 
@@ -18,11 +19,18 @@ public class StudentController{
 
     @PostMapping("/create")
     public ResponseEntity createInfo(@RequestBody Students students){
-        return ResponseEntity.ok(studentService.save(students));
+        studentService.save(students);
+        ConvertorFile convertorFile = new ConvertorFile();
+        convertorFile.convertor();
+        return ResponseEntity.ok(students);
+    }
+    @GetMapping("/showAllPage")
+    public ResponseEntity showAllPage(Pageable pageable){
+        return ResponseEntity.ok(studentService.findAll(pageable));
     }
     @GetMapping("/showAll")
-    public ResponseEntity showAllInfo(Pageable pageable){
-        return ResponseEntity.ok(studentService.findAll(pageable));
+    public ResponseEntity showAllInfo(){
+        return ResponseEntity.ok(studentService.findAll());
     }
     @GetMapping("/showId")
     public ResponseEntity showIdInfo(@RequestBody Long id){

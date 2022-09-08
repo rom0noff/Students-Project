@@ -22,9 +22,7 @@ public class FileStorage implements Serializable {
     private String name;
     private String extension;
     private Long fileSize;
-    private String hashId;
     private String contentType;
     private String uploadPath;
-    @Enumerated(EnumType.STRING)
     private FileStorageStatus storageStatus;
 }
