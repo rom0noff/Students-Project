@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import uz.roadmap.document.ConvertorFile;
+import uz.roadmap.convertorDocument.ConvertorFile;
 import uz.roadmap.entity.model.Students;
 import uz.roadmap.service.StudentService;
 
